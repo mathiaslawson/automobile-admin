@@ -1825,6 +1825,21 @@ const Navdata = () => {
       },
     },
     {
+      label: "Reports",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Reports",
+      icon: "bx bx-layer",
+      link: "/report",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+    {
       label: "Ratings",
       isHeader: true,
     },
