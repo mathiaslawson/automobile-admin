@@ -571,7 +571,7 @@ const Tracking = () => {
                       Events
                       </NavLink>
                     </NavItem>
-                    <NavItem className="">
+                    {/* <NavItem className="">
                       <NavLink
                         className={classnames("custom-tab", {
                           active: activeTab === "createvehicleevent",
@@ -610,7 +610,7 @@ const Tracking = () => {
                       >
                       Trade Vehicle Event
                       </NavLink>
-                    </NavItem>
+                    </NavItem> */}
                     {/* <NavItem className="">
                       <NavLink
                         className={classnames("custom-tab", {

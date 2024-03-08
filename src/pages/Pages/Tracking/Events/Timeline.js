@@ -1,7 +1,8 @@
-import React from 'react';
-import { Row, Col, Badge } from 'reactstrap';
-import styled from 'styled-components';
-import "./style.css"
+import React from "react";
+import { Row, Col, Badge } from "reactstrap";
+import styled from "styled-components";
+import "./style.css";
+import { useSelector } from "react-redux";
 
 const TimelineContainer = styled.div`
   display: flex;
@@ -25,15 +26,21 @@ const TimelineLine = styled.div`
   transform: translateY(-50%);
   width: 100%;
   height: 4px;
-  background-color: ${props => props.complete ? '#8a2be2' : '#ccc'}; /* Purple color for completed, gray for incomplete */
+  background-color: ${(props) =>
+    props.complete
+      ? "#8a2be2"
+      : "#ccc"}; /* Purple color for completed, gray for incomplete */
 `;
 
 const TimelineMarker = styled.div`
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-color: ${props => props.complete ? '#8a2be2' : '#ccc'}; /* Purple for completed, gray for incomplete */
-  border: 4px solid ${props => props.complete ? '#8a2be2' : '#ccc'}; /* Purple for completed, gray for incomplete */
+  background-color: ${(props) =>
+    props.complete
+      ? "#8a2be2"
+      : "#ccc"}; /* Purple for completed, gray for incomplete */
+  border: 4px solid ${(props) => (props.complete ? "#8a2be2" : "#ccc")}; /* Purple for completed, gray for incomplete */
   border-radius: 50%;
   text-align: center;
   line-height: 24px;
@@ -46,18 +53,52 @@ const TimelineContent = styled.div`
 `;
 
 const Timeline = ({ currentStep = 0 }) => {
+  const { user } = useSelector((state) => ({
+    user: state.Login.user,
+  }));
+
   const events = [
     {
-      text: 'Sell Event Created',
-      icon: '🚀',
+      text: `${
+        user?.role === "mech"
+          ? "Maintenance"
+          : user?.role === "customer"
+          ? "Maintenance"
+          : user?.role === "deal"
+          ? "Deal"
+          : user?.role === "sub"
+          ? "Sub"
+          : ""
+      } Event Created`,
+      icon: "🚀",
     },
     {
-      text: 'Sell Event Pending',
-      icon: '💻',
+      text: `${
+        user?.role === "mech"
+          ? "Maintenance"
+          : user?.role === "customer"
+          ? "Maintenance"
+          : user?.role === "deal"
+          ? "Deal"
+          : user?.role === "sub"
+          ? "Sub"
+          : ""
+      } Event Pending`,
+      icon: "💻",
     },
     {
-      text: 'Sell Event Approved',
-      icon: '🎯',
+      text: `${
+        user?.role === "mech"
+          ? "Maintenance"
+          : user?.role === "customer"
+          ? "Maintenance"
+          : user?.role === "deal"
+          ? "Deal"
+          : user?.role === "sub"
+          ? "Sub"
+          : ""
+      } Event Approved`,
+      icon: "🎯",
     },
   ];
 
@@ -67,7 +108,9 @@ const Timeline = ({ currentStep = 0 }) => {
         <React.Fragment key={index}>
           <TimelineLine complete={index <= currentStep} />
           <TimelineStep>
-            <TimelineMarker complete={index <= currentStep}>{event.icon}</TimelineMarker>
+            <TimelineMarker complete={index <= currentStep}>
+              {event.icon}
+            </TimelineMarker>
             <TimelineContent>{event.text}</TimelineContent>
           </TimelineStep>
         </React.Fragment>

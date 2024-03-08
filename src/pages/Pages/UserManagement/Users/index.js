@@ -6,9 +6,9 @@ import * as moment from "moment";
 // import img from "./img.png";
 
 // Import Images
-
-import nodata from "../../../../assets/images/nodata.png";
 import img from "../../../../assets/images/green.png";
+import nodata from "../../../../assets/images/nodata.png";
+
 import {
   Col,
   Container,
@@ -58,9 +58,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 // Export Modal
 import ExportCSVModal from "../../../../Components/Common/ExportCSVModal";
-import Timeline from "./Timeline";
 
-const Events = () => {
+const CreateEvent = () => {
   const dispatch = useDispatch();
   const {
     categories,
@@ -321,18 +320,23 @@ const Events = () => {
       // },
 
       {
-        Header: "Vehicle Name",
+        Header: "Customer Name",
         accessor: "name",
         filterable: false,
       },
       {
-        Header: "Event Type",
-        accessor: "event_type",
+        Header: "Email",
+        accessor: "email",
         filterable: false,
       },
       {
-        Header: "Event Description",
-        accessor: "description",
+        Header: "Customer Phone",
+        accessor: "phone",
+        filterable: false,
+      },
+      {
+        Header: "Customer Address",
+        accessor: "address",
         filterable: false,
       },
 
@@ -347,17 +351,17 @@ const Events = () => {
           </>
         ),
       },
-      {
-        Header: "Event Date",
-        Cell: (contact) => (
-          <>
-            {handleValidDate(contact.row.original.event_date)},{" "}
-            <small className="text-muted">
-              {handleValidTime(contact.row.original.event_date)}
-            </small>
-          </>
-        ),
-      },
+      // {
+      //   Header: "Event Date",
+      //   Cell: (contact) => (
+      //     <>
+      //       {handleValidDate(contact.row.original.event_date)},{" "}
+      //       <small className="text-muted">
+      //         {handleValidTime(contact.row.original.event_date)}
+      //       </small>
+      //     </>
+      //   ),
+      // },
       {
         Header: "Action",
         Cell: (cellProps) => {
@@ -564,27 +568,86 @@ const Events = () => {
 
   const users = [
     {
-      name: "BMW M5 Competition",
+      name: "John Doe",
       created_at: "2023-11-30T02:33:41.023Z",
-      event_type: "Repair",
-      description: "This is a repairs and maintenance tracking descriptions",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
     },
     {
-      name: "BMW M5 Competition",
+      name: "Kevin Dale",
       created_at: "2023-11-30T02:33:41.023Z",
-      event_type: "Maintenance",
-      description: "This is a repairs and maintenance tracking descriptions",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
     },
     {
-      name: "BMW M5 Competition",
+      name: "Ryan Reynolds",
       created_at: "2023-11-30T02:33:41.023Z",
-      event_type: "Maintenance",
-      description: "This is a repairs and maintenance tracking descriptions",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
       event_date: "2023-11-30T02:33:41.023Z",
     },
-   
+    {
+      name: "John Doe",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Ryan Reynolds",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "John Doe",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Kevin Dale",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
+    {
+      name: "Ryan Reynolds",
+      created_at: "2023-11-30T02:33:41.023Z",
+      event_type: "Create Vehicle",
+      email: "example@gmail.com",
+      phone: "+233559690060",
+      address: "1st Soula st",
+      event_date: "2023-11-30T02:33:41.023Z",
+    },
   ];
 
   return (
@@ -635,7 +698,7 @@ const Events = () => {
                 >
                   <div className="d-flex align-items-center flex-wrap gap-2">
                     <div className="flex-grow-1">
-                      <button
+                      {/* <button
                         style={{
                           boxShadow: "none",
                           backgroundColor: "white",
@@ -646,16 +709,12 @@ const Events = () => {
                         disabled={
                           updateloadding || saveloadding === true ? true : false
                         }
-                        className="btn"
+                        className="btn "
                         onClick={() => {
                           setModal(true);
                         }}
                       >
-                        {/* {updateloadding || saveloadding === true ? (
-                          ""
-                        ) : (
-                          <i className="ri-add-fill me-1 align-bottom"></i>
-                        )} */}
+                    
                         <i
                           className="bx bx-plus mx-1"
                           style={{
@@ -664,13 +723,9 @@ const Events = () => {
                             fontWeight: "bolder",
                           }}
                         ></i>
-                        Add Event
-                        {/* {updateloadding || saveloadding === true ? (
-                          <SaveLoader />
-                        ) : (
-                          ""
-                        )} */}
-                      </button>
+                        Create Vehicle Event
+                      
+                      </button> */}
                     </div>
                     <div className="flex-shrink-0">
                       <div className="hstack text-nowrap gap-2">
@@ -727,7 +782,7 @@ const Events = () => {
                 </CardHeader>
               </Card>
             </Col>
-            <Col xxl={8}>
+            <Col xxl={9}>
               <Card
                 id="contactList"
                 style={{
@@ -762,7 +817,7 @@ const Events = () => {
                         theadClass="table-light"
                         handleContactClick={handleContactClicks}
                         isContactsFilter={true}
-                        SearchPlaceholder="Search events..."
+                        SearchPlaceholder="Search users..."
                       />
                     ) : loading === true ? (
                       <Loader error={error} />
@@ -803,7 +858,8 @@ const Events = () => {
                         md={4}
                         className="left-column"
                         xl={4}
-                         style={{ overflow: "hidden", display: 'none' }}
+                        style={{ overflow: "hidden", display: "hidden" }}
+                      
                       >
                         {/* Your content, image, or any other elements */}
                         <div className="text-center mt-5">
@@ -1440,7 +1496,7 @@ const Events = () => {
               </Card>
             </Col>
 
-            <Col xxl={4}>
+            <Col xxl={3}>
               <Card
                 id="contact-view-detail"
                 style={{
@@ -1477,7 +1533,7 @@ const Events = () => {
                     <div className="p-3">
                       <div className="text-center">
                         <h5 className="text-start">
-                          Events
+                          User Management
                           <div>
                             <hr
                               style={{
@@ -1488,7 +1544,16 @@ const Events = () => {
                             />
                           </div>
                         </h5>
-                    <Timeline currentStep={1}/>
+                        <img
+                          src="https://media.istockphoto.com/id/1807251078/vector/track-navigation-pins-on-isometric-street-maps-navigate-mapping-technology-locate-position.jpg?s=612x612&w=0&k=20&c=jEoVVaNS8awtEISzQlWjswlx5UuiMBZjXaDkLAPiZT0="
+                          alt="fuel"
+                          width="200"
+                          className="mb-4"
+                          style={{
+                            borderRadius: "10px",
+                            boxShadow: "10px 10px 10px #e0e0e0",
+                          }}
+                        ></img>
                       </div>
 
                       <p
@@ -1502,16 +1567,7 @@ const Events = () => {
                         className="p-3 fw-light text-muted"
                       >
                         <i className="bx bx-error-circle fw-bolder text-dark mx-2 mt-2 fs-5"></i>
-                        Efficiently monitor and manage car tracking events with
-                        our intuitive platform. Track and organize events
-                        seamlessly, providing a comprehensive overview of the
-                        vehicle's journey. Our user-friendly interface allows
-                        for easy customization and real-time monitoring,
-                        ensuring you stay informed about the car's location,
-                        stops, and status. Enhance your tracking capabilities
-                        and streamline operations by effortlessly managing car
-                        tracking events through our reliable and accessible
-                        platform.
+                        Streamline user management for your platform with our intuitive module. Effortlessly create and customize user profiles, allowing you to document important information and preferences. Our user-friendly interface simplifies the process, ensuring efficient tracking and organization of user-related data. Enhance your ability to manage users by effortlessly creating, updating, and recording user information through our accessible module. With our platfo
                       </p>
                     </div>
                   </div>
@@ -1525,4 +1581,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default CreateEvent;

@@ -1743,16 +1743,33 @@ const Navdata = () => {
   ];
 
   const MechaMenu = [
+
     {
-      label: "Repairs",
+      label: "User Management",
       isHeader: true,
     },
 
     {
       id: "widgets",
-      label: "Repairs",
-      icon: "mdi mdi-share-variant-outline",
-      link: "/repairs",
+      label: "User Mangement",
+      icon: "bx bx-user",
+      link: "/user-management",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+    {
+      label: "Invoices",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Invoices",
+      icon: "bx bx-pulse",
+      link: "/invoices",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
@@ -1773,21 +1790,25 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
-    {
-      label: "Payments",
-      isHeader: true,
-    },
 
-    {
-      id: "widgets",
-      label: "Payments",
-      icon: "bx bx-dollar",
-      link: "/payments",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
+    // {
+    //   label: "Repairs",
+    //   isHeader: true,
+    // },
+
+    // {
+    //   id: "widgets",
+    //   label: "Repairs",
+    //   icon: "mdi mdi-share-variant-outline",
+    //   link: "/repairs",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIscurrentState("Widgets");
+    //   },
+    // },
+
+  
+    
     {
       label: "Tracking",
       isHeader: true,
@@ -1804,20 +1825,21 @@ const Navdata = () => {
       },
     },
     {
-      label: "Invoices",
+      label: "Ratings",
       isHeader: true,
     },
 
     {
       id: "widgets",
-      label: "Invoices",
-      icon: "bx bx-pulse",
-      link: "/invoices",
+      label: "Ratings",
+      icon: "bx bx-rocket",
+      link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
       },
     },
+  
   ];
 
   return (
