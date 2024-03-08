@@ -618,7 +618,7 @@ const InvoicePayments = () => {
                 >
                   <div className="d-flex align-items-center flex-wrap gap-2">
                     <div className="flex-grow-1">
-                      <button
+                      {/* <button
                         style={{
                           boxShadow: "none",
                           backgroundColor: "white",
@@ -634,11 +634,7 @@ const InvoicePayments = () => {
                           setModal(true);
                         }}
                       >
-                        {/* {updateloadding || saveloadding === true ? (
-                          ""
-                        ) : (
-                          <i className="ri-add-fill me-1 align-bottom"></i>
-                        )} */}
+                      
                         <i
                           className="bx bx-plus mx-1"
                           style={{
@@ -648,12 +644,8 @@ const InvoicePayments = () => {
                           }}
                         ></i>
                         Create Invoice Payment
-                        {/* {updateloadding || saveloadding === true ? (
-                          <SaveLoader />
-                        ) : (
-                          ""
-                        )} */}
-                      </button>
+                     
+                      </button> */}
                     </div>
                     <div className="flex-shrink-0">
                       <div className="hstack text-nowrap gap-2">
@@ -745,7 +737,7 @@ const InvoicePayments = () => {
                         theadClass="table-light"
                         handleContactClick={handleContactClicks}
                         isContactsFilter={true}
-                        SearchPlaceholder="Search assigned features..."
+                        SearchPlaceholder="Search invoices..."
                       />
                     ) : loading === true ? (
                       <Loader error={error} />

@@ -1386,7 +1386,7 @@ const Navdata = () => {
     // },
   ];
 
-  const customerMenu = [
+  const customerMenu =[
     // {
     //   label: "VEHICLES",
     //   isHeader: true,
@@ -1404,67 +1404,53 @@ const Navdata = () => {
     //     updateIconSidebar(e);
     //   },
     // },
+    // {
+    //   label: "Payments",
+    //   isHeader: true,
+    // },
+
+    // {
+    //   id: "widgets",
+    //   label: "Payments",
+    //   icon: "bx bx-dollar",
+    //   link: "/payments",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIscurrentState("Widgets");
+    //   },
+    // },
 
     {
-      label: "Repairs",
+      label: "Invoices",
       isHeader: true,
     },
 
     {
       id: "widgets",
-      label: "Repairs",
-      icon: "mdi mdi-share-variant-outline",
-      link: "/repairs",
+      label: "Invoices",
+      icon: "bx bx-pulse",
+      link: "/recieve-invoice",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
       },
     },
 
-    {
-      label: "Maintenance",
-      isHeader: true,
-    },
-    {
-      id: "widgets",
-      label: "Maintenance",
-      icon: "mdi mdi-puzzle-outline",
-      link: "/maintenance",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
-    {
-      label: "Payments",
-      isHeader: true,
-    },
+    // {
+    //   label: "Tracking",
+    //   isHeader: true,
+    // },
 
-    {
-      id: "widgets",
-      label: "Payments",
-      icon: "bx bx-dollar",
-      link: "/payments",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
-    {
-      label: "Tracking",
-      isHeader: true,
-    },
-
-    {
-      id: "widgets",
-      label: "Tracking",
-      icon: "bx bx-rocket",
-      link: "/tracking",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
+    // {
+    //   id: "widgets",
+    //   label: "Tracking",
+    //   icon: "bx bx-rocket",
+    //   link: "/tracking",
+    //   click: function (e) {
+    //     e.preventDefault();
+    //     setIscurrentState("Widgets");
+    //   },
+    // },
     {
       label: "Trades",
       isHeader: true,
@@ -1482,15 +1468,15 @@ const Navdata = () => {
     },
 
     {
-      label: "Inventory",
+      label: "Maintenance",
       isHeader: true,
     },
 
     {
       id: "tables",
-      label: "Inventory",
+      label: "Maintenance",
       icon: "mdi mdi-grid-large",
-      link: "/Inventory",
+      link: "/customer-maintenance",
       click: function (e) {
         e.preventDefault();
         setIsTables(!isTables);
@@ -1498,21 +1484,25 @@ const Navdata = () => {
       },
     },
 
+
+    
     {
-      label: "Invoices",
+      label: "Ratings",
       isHeader: true,
     },
 
     {
       id: "widgets",
-      label: "Invoices",
-      icon: "bx bx-pulse",
-      link: "/invoices",
+      label: "Ratings",
+      icon: "bx bx-rocket",
+      link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
       },
     },
+
+   
   ];
 
   const dealerMenu = [
@@ -1809,21 +1799,7 @@ const Navdata = () => {
 
   
     
-    {
-      label: "Tracking",
-      isHeader: true,
-    },
-
-    {
-      id: "widgets",
-      label: "Tracking",
-      icon: "bx bx-rocket",
-      link: "/tracking",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
+  
     {
       label: "Reports",
       isHeader: true,
@@ -1839,6 +1815,24 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
+
+
+  {
+      label: "Tracking",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Tracking",
+      icon: "bx bx-rocket",
+      link: "/tracking",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
     {
       label: "Ratings",
       isHeader: true,

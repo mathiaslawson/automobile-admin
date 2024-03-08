@@ -234,6 +234,8 @@ import Trades from '../pages/Pages/Trading/VehicleTrades'
 import UserManagement from '../pages/Pages/UserManagement/Users'
 import MechRatings from '../pages/Pages/Rating/UserRatings'
 import Reports from '../pages/Pages/Reports/Mech'
+import RecieveInvoice from '../pages/Pages/Invoices/InvoicePayment'
+import CustomerMaintenance from '../pages/Pages/Maintenance/MaintenanceRecords'
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -472,6 +474,8 @@ const authProtectedRoutes = [
   { path: "/user-management", component: <UserManagement /> },
   { path: "/mech-ratings", component: <MechRatings /> },
   { path: "/report", component: <Reports /> },
+  { path: "/recieve-invoice", component: <RecieveInvoice /> },
+  { path: "/customer-maintenance", component: <CustomerMaintenance /> },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
