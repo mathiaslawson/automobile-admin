@@ -4,6 +4,8 @@ import withRouter from '../Components/Common/withRouter';
 //redux
 import { useSelector } from "react-redux";
 import { createSelector } from 'reselect';
+import NavBar from '../Components/Global/Navbar/NavBar';
+import Footer from '../Components/Global/Footer/Footer'
 
 const NonAuthLayout = ({ children }) => {
     const selectDashboardData = createSelector(
@@ -25,9 +27,18 @@ const NonAuthLayout = ({ children }) => {
             document.body.removeAttribute("data-bs-theme")
         }
     }, [layoutModeType]);
+
+const pathname = window.location.pathname
+
     return (
         <div>
+          {
+            pathname === '/login' ? "" : <NavBar />
+          }
             {children}
+            {
+            pathname === '/login' ? "" : <Footer />
+          }
         </div>
     );
 };

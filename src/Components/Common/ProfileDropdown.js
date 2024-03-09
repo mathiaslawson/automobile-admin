@@ -64,7 +64,7 @@ const ProfileDropdown = () => {
               src={"https://us.123rf.com/450wm/fxquadro/fxquadro1906/fxquadro190601845/127174290-portrait-of-smiling-elegant-afro-etnicity-businessman-in-the-car-as-a-passenger-with-mobile-phone.jpg?ver=6"}
               alt="Header Avatar"
             />
-            <span className="text-start ms-xl-2">
+            <span className="text-start ms-xl-2 d-grid">
               <span className="d-none d-xl-inline-block ms-1 fw-medium user-name-text">
                 {userName}
               </span>
