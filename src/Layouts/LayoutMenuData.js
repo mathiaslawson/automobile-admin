@@ -1494,8 +1494,8 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bxs-star-half",
-      link: "/mech-ratings",
+      icon: "bx bx-star",
+      link: "/customer-rating",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
@@ -1679,13 +1679,15 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bxs-star-half",
+      icon: "bx bx-star",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
       },
     },
+
+    
 
 
    
@@ -1841,7 +1843,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bxs-star-half",
+      icon: "bx bx-star",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
@@ -1964,7 +1966,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bxs-star-half",
+      icon: "bx bx-star",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();

@@ -237,6 +237,7 @@ import Reports from '../pages/Pages/Reports/Mech'
 import RecieveInvoice from '../pages/Pages/Invoices/InvoicePayment'
 import CustomerMaintenance from '../pages/Pages/Maintenance/MaintenanceRecords'
 import SubDealPrice from '../pages/Pages/Vehicles/VehiclePricing'
+import CustomerRating from "../pages/Pages/Rating/UserRatings/CustomerRating";
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -479,6 +480,7 @@ const authProtectedRoutes = [
   { path: "/customer-maintenance", component: <CustomerMaintenance /> },
   { path: "/sub-deal-price", component: <SubDealPrice /> },
   { path: "/public-price", component: <SubDealPrice /> },
+  { path: "/customer-rating", component: <CustomerRating /> },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
