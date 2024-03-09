@@ -1578,6 +1578,16 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
+    {
+      id: "widgets",
+      label: "Public Pricing",
+      icon: "bx bx-dollar",
+      link: "/public-pricee",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
 
     {
       label: "Invoices",

@@ -171,10 +171,10 @@ const Login = (props) => {
 
   useEffect(() => {
     console.log(user?.role, "user?.role");
-    if (loggedIn && (user?.role === "mech" || user?.role === "customer")) {
-      navigate("/repairs");
+    if (loggedIn && (user?.role === "sub" || user?.role === "mech" || user?.role === "deal")) {
+      navigate("/user-management");
     } else if (loggedIn) {
-      navigate("/vehicles");
+      navigate("/recieve-invoice");
     }
   }, [user, loggedIn, navigate]);
 

@@ -6,11 +6,16 @@ import logoSm from "../assets/images/logo-sm.png";
 import logoDark from "../assets/images/logo-dark.png";
 import logoLight from "../assets/images/logo-light.png";
 
+
+import styled from 'styled-components';
+
 //Import Components
 import VerticalLayout from "./VerticalLayouts/index";
 import TwoColumnLayout from "./TwoColumnLayout";
 import { Container } from "reactstrap";
 import HorizontalLayout from "./HorizontalLayout";
+
+import Logo from "../Components/Logo";
 
 import img from '../assets/images/car.png'
 
@@ -35,9 +40,40 @@ const Sidebar = ({ layoutType }) => {
       document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
     }
   };
+
+
+  const StyledContainer = styled.div`
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  color: white;
+  box-shadow: none;
+  border-radius: 30px;
+ 
+  overflow: auto; /* Enable scrolling */
+
+  /* Custom Scrollbar Styles */
+  &::-webkit-scrollbar {
+    width: 7px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the track */
+    border-radius: 6px; /* Rounded corners for the track */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #7030f8; /* Purple color for the thumb */
+    border-radius: 6px; /* Rounded corners for the thumb */
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #6a1b9a; /* Darker purple color on hover */
+  }
+`;
+
   return (
     <React.Fragment>
-      <div className="app-menu navbar-menu text-light m-3 mx-3" style={{backgroundColor: 'white', border: '1px solid #e0e0e0', color: 'white', boxShadow: 'none', borderRadius: "30px", }}>
+      <StyledContainer  className="app-menu navbar-menu text-light m-3 mx-3" style={{backgroundColor: 'white', border: '1px solid #e0e0e0', color: 'white', boxShadow: 'none', borderRadius: "30px", overflow: 'scroll'}}>
         <div className="navbar-brand-box p-2" style={{backgroundColor: "transparent"}}>
           <Link to="/" className="logo logo-dark">
             <span className="logo-sm">
@@ -96,7 +132,7 @@ const Sidebar = ({ layoutType }) => {
             <div className="sidebar-background"></div>
           </React.Fragment>
         )}
-      </div>
+      </StyledContainer >
       <div className="vertical-overlay"></div>
     </React.Fragment>
   );

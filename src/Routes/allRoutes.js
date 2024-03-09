@@ -477,7 +477,8 @@ const authProtectedRoutes = [
   { path: "/report", component: <Reports /> },
   { path: "/recieve-invoice", component: <RecieveInvoice /> },
   { path: "/customer-maintenance", component: <CustomerMaintenance /> },
-  { path: "//sub-deal-price", component: <SubDealPrice /> },
+  { path: "/sub-deal-price", component: <SubDealPrice /> },
+  { path: "/public-price", component: <SubDealPrice /> },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
