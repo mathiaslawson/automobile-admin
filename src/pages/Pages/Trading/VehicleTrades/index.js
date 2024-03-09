@@ -665,7 +665,7 @@ const VehicleTrades = () => {
                             fontWeight: "bolder",
                           }}
                         ></i>
-                        Create Vehicle Trades
+                        Trade Vehicle
                         {/* {updateloadding || saveloadding === true ? (
                           <SaveLoader />
                         ) : (

@@ -30,6 +30,7 @@ import {
   Table,
   FormFeedback,
   Spinner,
+  Button
 } from "reactstrap";
 import Select from "react-select";
 
@@ -304,6 +305,22 @@ const Invoice = () => {
         Header: "Amount",
         accessor: "amount",
         filterable: false,
+      },
+      {
+        Header: "Send Invoice",
+        Cell: (contact) => (
+          <>
+          <Button style={{backgroundColor: '#7030f8', border: 'none'}}>Send Invoice</Button>
+          </>
+        ),
+      },
+      {
+        Header: "Status",
+        Cell: (contact) => (
+          <>
+          <Button style={{backgroundColor: '#fabe00', border: 'none'}}>Pending</Button>
+          </>
+        ),
       },
 
       {
