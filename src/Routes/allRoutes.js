@@ -238,6 +238,7 @@ import RecieveInvoice from '../pages/Pages/Invoices/InvoicePayment'
 import CustomerMaintenance from '../pages/Pages/Maintenance/MaintenanceRecords'
 import SubDealPrice from '../pages/Pages/Vehicles/VehiclePricing'
 import CustomerRating from "../pages/Pages/Rating/UserRatings/CustomerRating";
+import Home from "../pages/Pages/Home/";
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -498,6 +499,7 @@ const publicRoutes = [
   { path: "/login", component: <Login /> },
   { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
+  { path: "/home", component: <Home /> },
 
   
 
