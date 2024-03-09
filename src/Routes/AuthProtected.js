@@ -36,7 +36,7 @@ const AuthProtected = (props) => {
 
   if (Object.keys(user).length === 0) {
     return (
-      <Navigate to={{ pathname: "/login", state: { from: props.location } }} />
+      <Navigate to={{ pathname: "/home", state: { from: props.location } }} />
     );
   }
 
