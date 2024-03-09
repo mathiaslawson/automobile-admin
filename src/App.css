@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+.form-control:focus {
+  border-color: none ;
+  box-shadow: none;
+}
+
+Input:focus{
+  border-color: none !important;
+  box-shadow: none;
+  outline: none !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
