@@ -1506,14 +1506,31 @@ const Navdata = () => {
   ];
 
   const dealerMenu = [
+
     {
-      label: "VEHICLES",
+      label: "User Management",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "User Mangement",
+      icon: "bx bx-user",
+      link: "/user-management",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+    {
+      label: "Inventory",
       isHeader: true,
     },
 
     {
       id: "advanceUi",
-      label: "Vehicles",
+      label: "Inventory",
       icon: "mdi mdi-layers-triple-outline",
       link: "/vehicles",
       click: function (e) {
@@ -1525,20 +1542,108 @@ const Navdata = () => {
     },
 
     {
-      label: "Repairs",
+      id: "tables",
+      label: "Vehicles",
+      icon: "mdi mdi-grid-large",
+      link: "/Inventory",
+      click: function (e) {
+        e.preventDefault();
+        setIsTables(!isTables);
+        setIscurrentState("Tables");
+      },
+    },
+
+    {
+      label: "Sales",
       isHeader: true,
     },
 
     {
       id: "widgets",
-      label: "Repairs",
-      icon: "mdi mdi-share-variant-outline",
-      link: "/repairs",
+      label: "Payments",
+      icon: "bx bx-dollar",
+      link: "/payments",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
       },
     },
+    {
+      id: "widgets",
+      label: "Sub Deal Pricing",
+      icon: "bx bx-dollar",
+      link: "/sub-deal-price",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+    {
+      label: "Invoices",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Invoices",
+      icon: "bx bx-pulse",
+      link: "/invoices",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+   
+    {
+      label: "Trades",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Trades",
+      icon: "mdi mdi-form-select",
+      link: "/trades",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+    {
+      label: "Reports",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Reports",
+      icon: "bx bx-layer",
+      link: "/report",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+
+    {
+      label: "Tracking",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Tracking",
+      icon: "bx bx-rocket",
+      link: "/tracking",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
 
     {
       label: "Maintenance",
@@ -1554,95 +1659,56 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
+
+
     {
-      label: "Payments",
+      label: "Ratings",
       isHeader: true,
     },
 
     {
       id: "widgets",
-      label: "Payments",
-      icon: "bx bx-dollar",
-      link: "/payments",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
-    {
-      label: "Tracking",
-      isHeader: true,
-    },
-
-    {
-      id: "widgets",
-      label: "Tracking",
+      label: "Ratings",
       icon: "bx bx-rocket",
-      link: "/tracking",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
-    {
-      label: "Trades",
-      isHeader: true,
-    },
-
-    {
-      id: "widgets",
-      label: "Trades",
-      icon: "mdi mdi-form-select",
-      link: "/trades",
+      link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
       },
     },
 
-    {
-      label: "Inventory",
-      isHeader: true,
-    },
 
-    {
-      id: "tables",
-      label: "Inventory",
-      icon: "mdi mdi-grid-large",
-      link: "/Inventory",
-      click: function (e) {
-        e.preventDefault();
-        setIsTables(!isTables);
-        setIscurrentState("Tables");
-      },
-    },
+   
 
-    {
-      label: "Invoices",
-      isHeader: true,
-    },
-
-    {
-      id: "widgets",
-      label: "Invoices",
-      icon: "bx bx-pulse",
-      link: "/invoices",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
+    
   ];
 
   const subDealerMenu = [
+
     {
-      label: "VEHICLES",
+      label: "User Management",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "User Mangement",
+      icon: "bx bx-user",
+      link: "/user-management",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+    {
+      label: "Inventory",
       isHeader: true,
     },
 
     {
       id: "advanceUi",
-      label: "Vehicles",
+      label: "Inventory",
       icon: "mdi mdi-layers-triple-outline",
       link: "/vehicles",
       click: function (e) {
@@ -1652,8 +1718,21 @@ const Navdata = () => {
         updateIconSidebar(e);
       },
     },
+
     {
-      label: "Payments",
+      id: "tables",
+      label: "Vehicles",
+      icon: "mdi mdi-grid-large",
+      link: "/Inventory",
+      click: function (e) {
+        e.preventDefault();
+        setIsTables(!isTables);
+        setIscurrentState("Tables");
+      },
+    },
+
+    {
+      label: "Sales",
       isHeader: true,
     },
 
@@ -1668,50 +1747,13 @@ const Navdata = () => {
       },
     },
     {
-      label: "Tracking",
-      isHeader: true,
-    },
-
-    {
       id: "widgets",
-      label: "Tracking",
-      icon: "bx bx-rocket",
-      link: "/tracking",
+      label: "Sub Deal Pricing",
+      icon: "bx bx-dollar",
+      link: "/sub-deal-price",
       click: function (e) {
         e.preventDefault();
         setIscurrentState("Widgets");
-      },
-    },
-    {
-      label: "Trades",
-      isHeader: true,
-    },
-
-    {
-      id: "widgets",
-      label: "Trades",
-      icon: "mdi mdi-form-select",
-      link: "/trades",
-      click: function (e) {
-        e.preventDefault();
-        setIscurrentState("Widgets");
-      },
-    },
-
-    {
-      label: "Inventory",
-      isHeader: true,
-    },
-
-    {
-      id: "tables",
-      label: "Inventory",
-      icon: "mdi mdi-grid-large",
-      link: "/Inventory",
-      click: function (e) {
-        e.preventDefault();
-        setIsTables(!isTables);
-        setIscurrentState("Tables");
       },
     },
 
@@ -1730,6 +1772,77 @@ const Navdata = () => {
         setIscurrentState("Widgets");
       },
     },
+   
+    {
+      label: "Trades",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Trades",
+      icon: "mdi mdi-form-select",
+      link: "/trades",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+    {
+      label: "Reports",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Reports",
+      icon: "bx bx-layer",
+      link: "/report",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+
+    {
+      label: "Tracking",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Tracking",
+      icon: "bx bx-rocket",
+      link: "/tracking",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+
+    {
+      label: "Ratings",
+      isHeader: true,
+    },
+
+    {
+      id: "widgets",
+      label: "Ratings",
+      icon: "bx bx-rocket",
+      link: "/mech-ratings",
+      click: function (e) {
+        e.preventDefault();
+        setIscurrentState("Widgets");
+      },
+    },
+
+
+   
+
+    
   ];
 
   const MechaMenu = [
