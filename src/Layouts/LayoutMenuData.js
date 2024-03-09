@@ -1494,7 +1494,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bx-rocket",
+      icon: "bx bxs-star-half",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
@@ -1561,7 +1561,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Payments",
-      icon: "bx bx-dollar",
+      icon: "bx bx-wallet",
       link: "/payments",
       click: function (e) {
         e.preventDefault();
@@ -1581,7 +1581,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Public Pricing",
-      icon: "bx bx-dollar",
+      icon: "bx bxs-badge-dollar",
       link: "/public-pricee",
       click: function (e) {
         e.preventDefault();
@@ -1679,7 +1679,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bx-rocket",
+      icon: "bx bxs-star-half",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
@@ -1759,7 +1759,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Sub Deal Pricing",
-      icon: "bx bx-dollar",
+      icon: "bx bx-wallet",
       link: "/sub-deal-price",
       click: function (e) {
         e.preventDefault();
@@ -1841,7 +1841,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bx-rocket",
+      icon: "bx bxs-star-half",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
@@ -1964,7 +1964,7 @@ const Navdata = () => {
     {
       id: "widgets",
       label: "Ratings",
-      icon: "bx bx-rocket",
+      icon: "bx bxs-star-half",
       link: "/mech-ratings",
       click: function (e) {
         e.preventDefault();
