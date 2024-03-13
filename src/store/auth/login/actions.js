@@ -70,3 +70,10 @@ export const loginActorSuccess = (data) =>{
     payload: data
   }
 }
+
+export const finalLogin = () => {
+  return {
+    type: "FINAL_LOGIN", 
+   
+  }
+}

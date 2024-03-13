@@ -64,8 +64,9 @@ const Login = (props) => {
   const [userLogin, setUserLogin] = useState([]);
   const [passwordShow, setPasswordShow] = useState(false);
 
-  const { user } = useSelector((state) => ({
+  const { user, dashboard } = useSelector((state) => ({
     user: state.Login.user,
+    dashboard: state.Login.dashboard
   }));
 
   // useEffect(() => {
@@ -169,12 +170,15 @@ const Login = (props) => {
     },
   });
 
+  
+
   useEffect(() => {
     console.log(user?.role, "user?.role");
     if (loggedIn && (user?.role === "sub" || user?.role === "mech" || user?.role === "deal")) {
       navigate("/user-management");
     } else if (loggedIn) {
-      navigate("/recieve-invoice");
+    
+      navigate(dashboard === true ? "/recieve-invoice" : "/brand-category");
     }
   }, [user, loggedIn, navigate]);
 
@@ -236,7 +240,7 @@ const Login = (props) => {
   document.title = "Automobile Gh Admin";
   return (
     <React.Fragment>
-      <div className="css-selector mt-5">
+      <div className="css-selector mt-5" style={{backgroundColor: '#f2f2f7'}} >
         <div className="d-flex justify-content-center align-items-center mt-5">
           <Row className="">
             <Col

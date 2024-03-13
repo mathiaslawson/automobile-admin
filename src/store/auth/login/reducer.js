@@ -1,3 +1,4 @@
+
 import {
   LOGIN_USER,
   LOGIN_SUCCESS,
@@ -12,7 +13,8 @@ const initialState = {
   errorMsg: "",
   loading: false,
   error: false,
-  user: {}
+  user: {},
+  dashboard: false
 };
 
 const login = (state = initialState, action) => {
@@ -70,6 +72,13 @@ const login = (state = initialState, action) => {
         loading: false,
         error: false,
         user: action.payload,
+      };
+      break;
+    case "FINAL_LOGIN":
+    
+      state = {
+        ...state,
+       dashboard: true
       };
       break;
     default:

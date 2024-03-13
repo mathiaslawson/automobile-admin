@@ -239,6 +239,19 @@ import CustomerMaintenance from '../pages/Pages/Maintenance/MaintenanceRecords'
 import SubDealPrice from '../pages/Pages/Vehicles/VehiclePricing'
 import CustomerRating from "../pages/Pages/Rating/UserRatings/CustomerRating";
 import Home from "../pages/Pages/Home/";
+import Details from '../pages/Pages/Details/'
+import AboutUs from '../pages/Pages/AboutUs'
+import CustomerReview from '../pages/Pages/CustomerReview'
+import ReturnExchange from '../pages/Pages/ReturnExchange'
+import AuctionDetails from '../pages/Pages/Auction/'
+import Compare from '../pages/Pages/Compare'
+import Shop from '../pages/Pages/Shop'
+import ShopDetails from '../pages/Pages/Shop/Details'
+import Checkout from '../pages/Pages/Checkout'
+
+import BrandCategory from '../pages/Pages/BrandCategory'
+import SingleBrand from '../pages/Pages/SingleBrandCategory'
+
 
 // import FileManager from "../pages/FileManager";
 // import ToDoList from "../pages/ToDo";
@@ -483,6 +496,7 @@ const authProtectedRoutes = [
   { path: "/public-price", component: <SubDealPrice /> },
   { path: "/customer-rating", component: <CustomerRating /> },
 
+
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
   {
@@ -500,8 +514,18 @@ const publicRoutes = [
   { path: "/forgot-password", component: <ForgetPasswordPage /> },
   { path: "/register", component: <Register /> },
   { path: "/home", component: <Home /> },
+  { path: "/details", component: <Details /> },
+  { path: "/about-us", component: <AboutUs /> },
+  { path: "/customer-review", component: <CustomerReview /> },
+  { path: "/return-exchange", component: <ReturnExchange /> },
 
-  
+  { path: "/auction-details", component: <AuctionDetails /> },
+  { path: "/compare", component: <Compare /> },
+  { path: "/shop", component: <Shop /> },
+  { path: "/shop-details", component: <ShopDetails /> },
+  { path: "/shop-checkout", component: <Checkout /> },
+  { path: "/brand-category", component: <BrandCategory /> },
+  { path: "/single-brand", component: <SingleBrand /> },
 
   //AuthenticationInner pages
   // { path: "/auth-signin-basic", component: <BasicSignIn /> },

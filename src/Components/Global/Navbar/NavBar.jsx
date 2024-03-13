@@ -1,4 +1,4 @@
-import React, { useState, useEffect , useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 
 // import Modal from "./Modal";
@@ -7,14 +7,16 @@ import { IoMdPricetags, IoMdHeartEmpty, IoIosArrowDown } from "react-icons/io";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { Button } from "reactstrap";
 import { BsSearch, BsHandbag } from "react-icons/bs";
-
+import Joyride from "react-joyride";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import img from "./img.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../Logo";
+import { useSelector, useDispatch } from "react-redux";
+import { LuLayoutDashboard } from "react-icons/lu";
 import {
   Navbar,
   NavbarBrand,
@@ -47,6 +49,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
+import { finalLogin } from "../../../store/actions";
 
 const LogoAndText = () => (
   <div className="navbar-logo">
@@ -98,6 +101,8 @@ const NavBar = () => {
     event.stopPropagation();
   };
 
+  const dispatch = useDispatch();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const [modal, setModal] = useState(false);
@@ -116,6 +121,23 @@ const NavBar = () => {
     password: "",
     confirm: "",
   });
+
+  const [run, setRun] = useState(false);
+
+  const handleTourStart = () => {
+    setRun(true);
+  };
+
+  const handleTourEnd = () => {
+    setRun(false);
+  };
+
+  const steps = [
+    {
+      target: "tour-button",
+      content: "This button will take you to the dashboard or login page.",
+    },
+  ];
 
   const validation = useFormik({
     enableReinitialize: true,
@@ -210,10 +232,7 @@ const NavBar = () => {
 
   const toggleDropdown = () => setDropdownOpen((prevState) => !prevState);
 
-
   const dropdownRef = useRef(null);
-
- 
 
   // Function to close the dropdown when clicking outside
   const handleClickOutside = (event) => {
@@ -224,13 +243,18 @@ const NavBar = () => {
 
   // Add event listener when component mounts
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     // Clean up event listener when component unmounts
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
+  const { user } = useSelector((state) => ({
+    user: state.Login.user,
+  }));
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -407,30 +431,34 @@ const NavBar = () => {
                 <IoMdHeartEmpty style={{ color: "#00d084" }} />
                 SAVE
               </div>
-              <div>
-               <Link to="/login">
-               <Button
-                  className="btn btn-dark d-flex align-items-center justify-content-evenly"
-                  style={{
-                    borderRadius: "4px",
-                    backgroundColor: "#00d084",
-                    border: "none",
-                    width: "max-content",
-                  }}
-                  // onClick={() => {
-                  //   if (loggedIn) {
-                  //     toggleLoginModal();
-                  //   } else {
-                  //     toggleLoginModal();
-                  //   }
-                  // }}
-                >
-                  <div>
-                    <RiAccountCircleLine style={{ color: "white" }} />
-                  </div>
-                  <div>{loggedIn ? account?.first_name : "Login"}</div>
-                </Button>
-               </Link>
+              <div className="mt-2">
+                <Link to="/login">
+                  <Button
+                    className="btn btn-dark d-flex align-items-center justify-content-evenly"
+                    style={{
+                      borderRadius: "4px",
+                      backgroundColor: "#00d084",
+                      border: "none",
+                      width: "max-content",
+                    }}
+                    // onClick={() => {
+                    //   if (loggedIn) {
+                    //     toggleLoginModal();
+                    //   } else {
+                    //     toggleLoginModal();
+                    //   }
+                    // }}
+                  >
+                    <div>
+                      <RiAccountCircleLine style={{ color: "white" }} />
+                    </div>
+                    <div>
+                      {Object.keys(user).length > 0
+                        ? user?.first_name + " " + user?.last_name
+                        : "Login"}
+                    </div>
+                  </Button>
+                </Link>
                 <Dropdown
                   isOpen={isLoginModal}
                   toggle={toggleLoginModal}
@@ -470,7 +498,7 @@ const NavBar = () => {
                               setAccount({});
                               toast.success("Logged Out Successfully");
                               toggleLoginModal();
-                              window.location.href='/'
+                              window.location.href = "/";
                             }, 4000);
                           }}
                           className=" align-items-center d-flex"
@@ -494,13 +522,51 @@ const NavBar = () => {
                   </DropdownMenu>
                 </Dropdown>
               </div>
+              <div
+                style={{ display: Object.keys(user).length > 0 ? "" : "none" }}
+
+                className="tour-button"
+              >
+                <Button
+                  className="btn btn-dark d-flex align-items-center justify-content-evenly tour-button"
+                  style={{
+                    borderRadius: "4px",
+                    backgroundColor: "#00d084",
+                    border: "none",
+                    width: "max-content",
+                  }}
+                  onClick={() => {
+                    dispatch(finalLogin());
+                    navigate("/login");
+                  }}
+                >
+                  <div>
+                    <LuLayoutDashboard style={{ color: "white" }} />
+                  </div>
+                  <div>
+                    {Object.keys(user).length > 0 ? "Visit Dashboard" : "Login"}
+                  </div>
+                </Button>
+              </div>
+{/* 
+              <Joyride
+        run={run}
+        steps={steps}
+        continuous={true}
+        scrollToFirstStep={true}
+        showSkipButton={true}
+        callback={handleTourEnd}
+      />
+      {Object.keys(user).length > 0 && (
+        <button onClick={handleTourStart}>Start Tour</button>
+      )} */}
             </div>
           </div>
         </nav>
 
         <section
           className="px-5 bottom-nav d-flex justify-content-around mx-2 "
-          style={{ flexWrap: "wrap"}}
+          style={{ flexWrap: "wrap" }}
         >
           <div className="d-none d-md-block">
             <ul className="menu p-4 d-flex flex-wrap">
@@ -793,7 +859,6 @@ const NavBar = () => {
             <div>
               <div className="text-center mt-5">
                 <h5 className="fw-bolder">Login</h5>
-             
               </div>
               <div>
                 <hr style={{ border: "1px solid #e0e0e0" }} />
@@ -1361,7 +1426,6 @@ const NavBar = () => {
                         rows="3"
                         onChange={sellValidation.handleChange}
                         onBlur={sellValidation.handleBlur}
-                      
                       ></textarea>
                       {sellValidation.touched.note &&
                       sellValidation.errors.note ? (

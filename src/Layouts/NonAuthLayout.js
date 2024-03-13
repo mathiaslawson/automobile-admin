@@ -31,7 +31,7 @@ const NonAuthLayout = ({ children }) => {
 const pathname = window.location.pathname
 
     return (
-        <div>
+        <div style={{backgroundColor: 'white'}}>
           {
             pathname === '/login' ? "" : <NavBar />
           }
